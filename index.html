@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title>My addition app</title>
+<style>
+	*{
+		font-size:50px; font-family:sans-serif;background-color:lightblue;
+	}
+</style>
+<script>
+	function add()
+	{
+	event.preventDefault();
+	let num1=document.getElementById("num1")
+	let num2=document.getElementById("num2")
+	let msg=document.getElementById("msg")
+        if(num1.value==""){
+	alert("num1 cannot be empty")
+	msg.innerHTML=""
+	num1.focus()
+ 	return;
+	}
+	if(num2.value==""){
+	alert("num2 cannot be empty")
+	msg.innerHTML=""
+	num1.focus()
+	return;
+	
+	}
+	let res=parseFloat(num1.value)+parseFloat(num2.value)
+	let ans= "Addition of numbers is  " + res;
+	msg.innerHTML=ans;
+	
+		
+	}
+</script>
+</head>
+<body>
+<center>
+	<h1>Addition Application</h1>
+	<form onsubmit="add()">
+	<input type="number" placeholder="Enter first number" id="num1"/>
+	<input type="number" placeholder="Enter second number" id="num2"/>	
+	<br><br>
+	<input type="Submit" value="Add"/>
+	</form>
+	<h1 id="msg"></h1>
+</center>
+</body>
+
+</html>
